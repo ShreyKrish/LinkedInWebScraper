@@ -2,19 +2,36 @@
 <html>
 <head>
     <title>Job Scraper</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
 </head>
 <body>
-    <h1>Job Scraper</h1>
-    <form action="/search" method="post">
-        <label for="job_type">Job Type:</label>
-        <select id="job_type" name="job_type">
-            <option value="internship">Internship</option>
-            <option value="entry-level">Entry-Level</option>
-            <option value="associate">Associate</option>
-        </select><br><br>
-        <label for="keywords">Keywords:</label>
-        <input type="text" id="keywords" name="keywords"><br><br>
-        <input type="submit" value="Search">
-    </form>
+    <div class="container">
+        <h1>Job Scraper</h1>
+        <form action="/search" method="post" onsubmit="showSpinner()">
+            <div class="form-group">
+                <label for="job_type">Job Type:</label>
+                <select id="job_type" name="job_type" class="form-control">
+                    <option value="internship">Internship</option>
+                    <option value="entry-level">Entry-Level</option>
+                    <option value="associate">Associate</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="keywords">Keywords:</label>
+                <input type="text" id="keywords" name="keywords" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Search</button>
+        </form>
+        <div id="spinner" class="text-center mt-3" style="display:none;">
+            <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 </body>
 </html>

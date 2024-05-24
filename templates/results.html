@@ -2,14 +2,18 @@
 <html>
 <head>
     <title>Job Scraper Results</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
 </head>
 <body>
-    <h1>Job Scraper Results</h1>
-    <ul>
-        {% for title, link in results %}
-            <li><a href="{{ link }}" target="_blank">{{ title }}</a></li>
-        {% endfor %}
-    </ul>
-    <a href="/">Back to search</a>
+    <div class="container">
+        <h1>Job Scraper Results</h1>
+        <ul>
+            {% for title, link in results %}
+                <li><a href="{{ link }}" target="_blank">{{ title }}</a></li>
+            {% endfor %}
+        </ul>
+        <a href="/" class="btn btn-secondary btn-block">Back to search</a>
+    </div>
 </body>
 </html>
