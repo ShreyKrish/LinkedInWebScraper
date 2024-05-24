@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Scraper Results</title>
+</head>
+<body>
+    <h1>Job Scraper Results</h1>
+    <ul>
+        {% for title, link in results %}
+            <li><a href="{{ link }}" target="_blank">{{ title }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back to search</a>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Scraper</title>
+</head>
+<body>
+    <h1>Job Scraper</h1>
+    <form action="/search" method="post">
+        <label for="job_type">Job Type:</label>
+        <select id="job_type" name="job_type">
+            <option value="internship">Internship</option>
+            <option value="entry-level">Entry-Level</option>
+            <option value="associate">Associate</option>
+        </select><br><br>
+        <label for="keywords">Keywords:</label>
+        <input type="text" id="keywords" name="keywords"><br><br>
+        <input type="submit" value="Search">
+    </form>
+</body>
+</html>
